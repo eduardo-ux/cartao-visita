@@ -1,0 +1,186 @@
+@charset "UTF-8";
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+@keyframes AnimarBorda{
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 300%;
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 98vw;
+    height: 97vh;
+    background-image: url(../imagens/R.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(0px) saturate(200%);
+    -webkit-backdrop-filter: blur(0px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    height: 450px;
+    width: 300px;
+}
+
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    z-index: 0;
+    border-radius: 10px;
+}
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+
+
+
+ div {
+    background-color: rgba(5, 4, 4, 0.359);
+    height: 70px;
+    width: 70px;
+    display: inline-block;
+    border-radius: 50%;
+    
+}
+
+div#foto{
+    background: url(../imagens/perfil.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 150px;
+}
+#perfil1{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+#foto::before, #foto::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transform: translate(-3%, -3%);
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: linear-gradient(45deg, #ffff00, #00ff00, #0099ff, #0099ff, #001aff, #a200ff, #ff0055, #ff0000, #ffff00, #00ff00, #0099ff, #0099ff, #001aff, #a200ff);
+    border-radius:50%;
+    
+    background-size: 300%;
+    animation: AnimarBorda 8s linear infinite alternate;
+}
+
+
+#foto::after{
+    filter: blur(40px);
+    transform: translate(-140px, 20px);
+    }
+
+section#apresentacao{
+    position: relative;
+    top: 50%;
+    left: 3%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+section#apresentacao > p{
+    padding: 0px;
+    margin: 0px;
+    width: 280px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+section#social{
+    position: absolute;
+    top: 85%;
+    left: 30%;
+}
+ a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    padding: 0px;
+    
+}
+ .logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 6px;
+    box-shadow: 0px  2px 4px 0px black;
+}
+
+img.logo:hover {
+    transform: translate(0px, -2px);
+    transition: transform 0.2s, border 0.2s;
+    box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.559);
+}
